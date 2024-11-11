@@ -1,0 +1,4 @@
+source:
+  repoURL: 'https://github.com/your-repo/power-outage-schedule'
+  targetRevision: HEAD
+  path: helm-chart

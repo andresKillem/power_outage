@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: power-outage-schedule
+  labels:
+    app: power-outage-schedule
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: power-outage-schedule
+  template:
+    metadata:
+      labels:
+        app: power-outage-schedule
+    spec:
+      containers:
+        - name: power-outage-schedule
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              cpu: "{{ .Values.resources.limits.cpu }}"
+              memory: "{{ .Values.resources.limits.memory }}"
+            requests:
+              cpu: "{{ .Values.resources.requests.cpu }}"
+              memory: "{{ .Values.resources.requests.memory }}"

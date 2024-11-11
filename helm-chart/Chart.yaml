@@ -1,0 +1,5 @@
+apiVersion: v2               # Required API version for Helm chart
+name: power-outage-schedule   # Name of the chart
+version: 0.1.0                # Version of the chart (increment with updates)
+description: A Helm chart for the Power Outage Schedule microservice
+appVersion: "1.0"             # (Optional) Version of the app being deployed
